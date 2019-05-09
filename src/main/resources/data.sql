@@ -31,3 +31,5 @@ INSERT INTO zooanimals (zooid, animalid)
                 (5, 1),
                 (3, 1),
                 (3, 2);
+
+-- alter sequence hibernate_seq restart with 10;
