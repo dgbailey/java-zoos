@@ -12,6 +12,6 @@ public interface AnimalRepository extends CrudRepository<Animal,Long> {
 
     ArrayList<Animal> findByAnimaltype(String type);
 
-    @Query(value = "SELECT a.animalid,a.animaltype FROM animal a LEFT JOIN zooanimals z ON a.animalid=z.animalid;", nativeQuery = true)
+    @Query(value = "SELECT COUNT(zooid) as countzoos, z.animalid,animaltype FROM zooanimals  z LEFT JOIN animal a ON z.animalid=a.animalid GROUP BY a.animalid,animaltype", nativeQuery = true)
     ArrayList<CountAnimalsInZoos> getCountStudentsInCourse();
 }

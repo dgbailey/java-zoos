@@ -8,4 +8,6 @@ public interface ZooService {
     ArrayList<Zoo> findAll();
 
     Zoo findZooByName (String name);
+
+    Zoo update(Zoo zoo, long zooid);
 }

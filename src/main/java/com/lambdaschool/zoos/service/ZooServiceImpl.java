@@ -24,6 +24,17 @@ public class ZooServiceImpl implements ZooService{
     }
 
     @Override
+    public Zoo update(Zoo zoo, long zooid) {
+        Zoo currentZoo = zoorepos.findById(zooid)
+                .orElseThrow(() -> new EntityNotFoundException(Long.toString(zooid)));
+        currentZoo.setZooname(zoo.getZooname());
+        //you would update telephones w/ the telephone controller
+
+
+        return zoorepos.save(currentZoo);
+    }
+
+    @Override
     public Zoo findZooByName(String name) {
         Zoo zoo = zoorepos.findByZooname(name);
         if (zoo == null)
