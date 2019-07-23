@@ -39,4 +39,6 @@ public class ZooController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    //dont add pointers add new objects
+
 }
